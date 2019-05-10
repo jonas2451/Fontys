@@ -1,0 +1,15 @@
+dao\oldEntity.class
+dao\DAOException.class
+dao\DAO.class
+dao\mapper\AbstractMapper.class
+dao\PG\DateFormater.class
+dao\AbstractDAOFactory.class
+dao\mapper\PGMapper.class
+dao\mapper\Mapper.class
+dao\Entity1.class
+dao\ID.class
+dao\UUID\GUID.class
+dao\PG\PGDAOFactory.class
+dao\PG\PGDAO.class
+dao\PG\connection\PgJDBC.class
+dao\PG\connection\Connect.class
