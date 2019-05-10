@@ -17,7 +17,7 @@ public interface Entity1<K extends Serializable> {
 
 //    Entity1 implode(Object[] e);
 
-    String getID();
+    K getID();
 
     /**
      *

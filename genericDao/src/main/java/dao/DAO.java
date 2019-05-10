@@ -15,7 +15,7 @@ public interface DAO<K extends Serializable, E extends Entity1<K>> {
 
     Optional<E> get(String id);
 
-    List<E> getAll();
+    Collection<E> getAll();
 
     E save(E e);
 
