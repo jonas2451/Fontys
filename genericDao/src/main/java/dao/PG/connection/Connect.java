@@ -8,6 +8,7 @@ import java.sql.SQLException;
  *
  * creates a connection to a postgres database
  */
+@Deprecated
 public class Connect {
 
     /**
@@ -16,9 +17,10 @@ public class Connect {
      * @return Connection please save the returned connection into a local variable
      * @throws SQLException when the connection fails
      */
+    @Deprecated
     public static Connection createConnection() throws SQLException{
         try {
-            String dbURL = "jdbc:postgresql://localhost:5433/heiden";
+            String dbURL = "jdbc:postgresql://localhost:5432/heiden";
             String userName = "postgres";
             String password = "mypassword";
 
@@ -29,16 +31,16 @@ public class Connect {
             return dbConnection;
         } catch (SQLException e) {
             //<editor-fold defaultstate="collapsed" desc="Alternative Connection">
-            try {
-
-                Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/heiden", "postgres", "mypassword");
-
-                System.out.println("Connected!");
-
-                return dbConnection;
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
+//            try {
+//
+//                Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/heiden", "postgres", "mypassword");
+//
+//                System.out.println("Connected!");
+//
+//                return dbConnection;
+//            } catch (SQLException e1) {
+//                e1.printStackTrace();
+//            }
             //</editor-fold>
             System.out.println(e.getMessage());
         }

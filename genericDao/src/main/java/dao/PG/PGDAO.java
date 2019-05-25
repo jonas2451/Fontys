@@ -1,5 +1,7 @@
 package dao.PG;
 
+import dao.DAOException;
+import dao.DAOConnection;
 import dao.PG.connection.PgJDBC;
 import dao.DAO;
 import dao.Entity1;
@@ -11,37 +13,44 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
+/**
+ * A DAO implementation, compatible with a relational postgres database.
+ *
+ * @param <K> Key of an entity
+ * @param <E> Type of an entity
+ */
 public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<K, E> {
 
     private Connection conn;
     private Mapper<K, E> mapper;
 
-    private static String GET_QUERY = "";
-
-    public PGDAO(Mapper<K, E> mapper, Connection conn) {
+    public PGDAO(Mapper<K, E> mapper, DAOConnection conn) {
         this.mapper = mapper;
-        this.conn = conn;
+        this.conn = conn.getConnection();
+//        Logger.getLogger(this.getClass().getName()).setLevel(Level.OFF);
     }
 
     @Override
-    public Optional<E> get(String id) {
+    public Optional<E> get(K key) {
 
-        ResultSet rs = PgJDBC.doQuery(conn, "select * from "+ mapper.getTableName() +" where id = '" + id + "';");
-        //System.out.println("select * from "+ mapper.getTableName() +" where id = '" + id + "';");
-        //Object[] array = null;
+        Entity1 helperEntity = this.makeHelperObject();
 
+        ResultSet rs = PgJDBC.doQuery(conn, "select * from "+ mapper.getTableName() +" where " + helperEntity.getNaturalId() + " = '" + key + "';");
+        System.out.println("select * from "+ mapper.getTableName() +" where " + helperEntity.getNaturalId() + " = '" + key + "';");
         try {
+            rs.next();
             Object[] array = this.makeFinalArray(rs);
 
             if (array.length != 0) {
                 E e = mapper.implode(array);
-                //System.out.println("Imploded Object inside mapper: " + e + "\n");
-                //System.out.println(Optional.of(e));
+                Logger.getLogger(this.getClass().getName()).log(Level.FINE, "Successfully got: " + e);
                 return Optional.of(e);
             }
-        } catch (SQLException | NullPointerException e) {
-            e.printStackTrace();
+        } catch (SQLException | NullPointerException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Request failed. No such record in the database?", ex);
         }
 
         return Optional.empty();
@@ -49,7 +58,6 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
 
     @Override
     public List<E> getAll() {
-
         ResultSet rs = PgJDBC.doQuery(conn, "select * from " + mapper.getTableName() + ";");
 
         List<E> list = new ArrayList<E>();
@@ -57,16 +65,36 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
         try {
             Object[] array = null;
 
-            //iterating the result set and making new Objects that are added to the list
+            /*iterating the result set and making new Objects that are added to the list*/
             while (rs.next()){
                 array = makeFinalArray(rs);
                 list.add(mapper.implode(array));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Request failed. No such record in the database?", ex);
         }
-
         return list;
+    }
+
+    /**
+     * Creates a helper object to use the methods provided by the Entity1 interface.
+     *
+     * Requires an empty constructor!!!
+     * @return helper object of the entity type
+     * @since V3.8
+     */
+    private Entity1 makeHelperObject() {
+        Entity1 helperEntity = null;
+        try {
+            helperEntity = mapper.entityType().newInstance();
+        } catch (InstantiationException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,
+                    "There is no default / empty constructor found for: " + mapper.entityType(), ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,
+                    "The default constructor could not be accessed. Please check the modifiers for: " + mapper.entityType(), ex);
+        }
+        return helperEntity;
     }
 
     /**
@@ -80,15 +108,11 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
 
         int length = rs.getMetaData().getColumnCount();
 
-        //System.out.println("result set: " + rs.getObject(1) + ", Size: " + length);
-
         Object[] array = new Object[length];
 
         for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
             array[i-1] = rs.getObject(i);
         }
-        System.out.println("Final array: " + Arrays.toString(array) + "\n");
-
         return array;
     }
 
@@ -105,20 +129,30 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
 
             //put single quotes around every item
             for (int i = array.length -1; i >= 0; i--) {
-                array[i] = "'" + array[i] + "'";
+                System.out.println(Arrays.toString(array));
+                if (array[i] == null){
+                    array[i] = array[i];
+                } else {
+                    array[i] = "'" + array[i] + "'";
+                }
             }
 
             ResultSet rs = PgJDBC.doQuery(conn,
                     "insert into " + this.mapper.getTableName() + " " +
                             "values(" + Arrays.toString(array).substring(1, Arrays.toString(array).length() - 1) + ")" +
-                            "on conflict (id)" +
+                            "on conflict (" + e.getNaturalId() + ") " +
                             "do nothing;");
 
-        } catch (Exception ex){                                                                                         //TODO
-            System.out.println("Save exception: " );
-            ex.printStackTrace();
+        } catch (Exception ex){
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Saving has failed.", ex);
         }
-        return e;
+        if (this.get(e.getId()).isPresent()) {
+            E newE = this.get(e.getId()).get();
+            Logger.getLogger(this.getClass().getName()).log(Level.FINE, "Saving successful! Saved: " + newE);
+            return newE;
+        } else {
+            throw new DAOException("No object has been saved!");
+        }
     }
 
     @Override
@@ -126,6 +160,7 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
 
         Field[] fields = e.getClass().getDeclaredFields();
 
+        /*Builds the values of the query needed for an update statement*/
         StringBuilder builder = new StringBuilder(fields.length);
         try {
 
@@ -142,33 +177,38 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
             builder.append(fields[fields.length-1].get(e));
             builder.append("' ");
 
-        } catch (IllegalAccessException e1) {
-            e1.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Error whilst reflecting " + e.getClass() + " fields.", ex);
         }
         String query = "update " + this.mapper.getTableName() + " set " +
-                builder.toString() + " where " + e.getNaturalId() + " = '" + e.getID() + "';";
+                builder.toString() + " where " + e.getNaturalId() + " = '" + e.getId() + "';";
 
-        if (PgJDBC.doQuery(conn, query) == null) return null;
+        if (PgJDBC.doQuery(conn, query) == null) {
+            return this.save(e);
+        }
 
-        //System.out.println(query);
         return e;
     }
 
     @Override
     public void delete(E e) {
-        PgJDBC.doQuery(conn, "delete from " + mapper.getTableName() + " where " + e.getNaturalId() + " = " + e.getID());
+        PgJDBC.doQuery(conn, "delete from " + mapper.getTableName() + " where " + e.getNaturalId() + " = '" + e.getId() + "';");
     }
 
     @Override
-    public void loadNewMapper(Mapper<K, E> mapper) {
-        this.mapper = mapper;
-    }
+    public Collection<E> getByColumnValue(String column, String value) {
+//        System.out.println("<PGDAO getByColumnValue()> value: " + value);
+        String query;
 
-    @Override
-    public Collection<E> searchFor(E e, String search) {
-        ArrayList<E> list = new ArrayList();
-        String query = "select * from customers where " + mapper.pullSearchCriterion(e).get() + " ilike '%" + search + "%';";
-        System.out.println(query);
+        if (!value.equals(" ")) {
+            query = "select * from " + mapper.getTableName().toLowerCase() + " where " + column + " ilike '" + value + "%';";
+        } else {
+            query = "select * from " + mapper.getTableName().toLowerCase() + ";";
+        }
+
+        ArrayList<E> list = new ArrayList<E>();
+
+//        System.out.println("<PGDAO getByColumnValue()> query: " + query);
         try {
             ResultSet rs = PgJDBC.doQuery(conn, query);
 
@@ -178,11 +218,8 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
+            throw new DAOException("No results for this column value!");
         }
         return list;
-    }
-
-    public Connection getConn() {
-        return conn;
     }
 }

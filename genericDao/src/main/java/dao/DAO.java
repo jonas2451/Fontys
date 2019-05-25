@@ -7,31 +7,63 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import static java.util.stream.Collectors.toList;
 
+/**
+ * A DAO interface with crud operations.
+ *
+ * @param <K> Key type of the entity
+ * @param <E> Entity type thats used in the DAO
+ */
 public interface DAO<K extends Serializable, E extends Entity1<K>> {
 
-    Optional<E> get(String id);
+    /**
+     * Get a record according to the key.
+     *
+     * @param key = primary key of the Entity in the database
+     * @return an optional object according to the key
+     */
+    Optional<E> get(K key);
 
-    List<E> getAll();
+    /**
+     * Get all records of a certain Entity from the database.
+     *
+     * @return a collection of entities
+     */
+    Collection<E> getAll();
 
+    /**
+     * Creates a new record in the database.
+     *
+     * @param e to be saved
+     * @return the saved Object from the database
+     */
     E save(E e);
 
+    /**
+     * Updated the according record in the database.
+     * if no according record is found {@code dao.save(e)} is invoked
+     *
+     * @param e to be updated
+     * @return the updated Object from the database
+     */
     E update(E e);
 
+    /**
+     * Deletes the Object from the parameter.
+     *
+     * @param e to be deleted
+     */
     void delete(E e);
 
     default String lastId(){
         return "0";
     }
 
-    void loadNewMapper(Mapper<K, E> mapper);
-
-    Collection<E> searchFor(E e, String search);
-
-    /**hom
+    /**
      * Save all entities, returning the result in a collection with the saved
      * versions of the entities, generated fields and all.
      *
@@ -45,24 +77,35 @@ public interface DAO<K extends Serializable, E extends Entity1<K>> {
      *
      * @param entities to save
      * @return the saved entities
-     * @since 0.4
+     *
+     * {Code by Hom}
      */
     default Collection<E> saveAll(Iterable<E> entities) {
         return StreamSupport.stream( entities.spliterator(), false )
                 .map( e -> this.save( e ) ).collect( toList() );
     }
 
-    /**hom
+    /**
      * Save the given entities, returning the result as a list.
      *
      * This default implementation will benefit from any improvemenst by an overwritten
      * {@code saveAll(Collection &lt;E&gt;entities)}
      * @param entities to save
      * @return the saved versions of the entities in a list.
-     * @since 0.4
+     *
+     * {Code by Hom}
      */
     default Collection<E> saveAll(E... entities) {
 
         return saveAll( Arrays.asList( entities ) );
     }
+
+    /**
+     * Gets a Collection of objects, containing the search results.
+     *
+     * @param column name of the column in the database
+     * @param value search criterion
+     * @return a collection of objects
+     */
+    default Collection<E> getByColumnValue(String column, String value) {throw new UnsupportedOperationException("No default implementation for this method!");};
 }

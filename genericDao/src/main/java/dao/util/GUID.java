@@ -1,4 +1,4 @@
-package dao.UUID;
+package dao.util;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -6,12 +6,19 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+/**
+ * A utility class that calls a webservice to assign a unique ID to an Object.
+ */
 public class GUID {
 
     private static final String URI = "https://www.uuidgenerator.net/api/guid";
 
 
-
+    /**
+     * Generates a unique GUID.
+     *
+     * @return 36-digit long String
+     */
     public static String generate() {
         try {
             URL host = new URL(URI);

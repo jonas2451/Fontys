@@ -3,11 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>group4</groupId>
     <artifactId>genericDao</artifactId>
-    <version>0.3</version>
+    <version>3.8-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>genericDao :: genericDaoClient</name>
     <description>
-
+        A DAO package that contains a generic Postgres DAO that can perform crud operations on a relational
+        postgres database, as well as a REST-DAO that can make calls to REST-Service.
     </description>
     <parent>
         <groupId>nl.fontys.sebivenlo</groupId>
@@ -40,6 +41,11 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-api</artifactId>
+            <version>2.5.0-b36</version>
         </dependency>
     </dependencies>
 </project>

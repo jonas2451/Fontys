@@ -1,13 +1,10 @@
 package dao.PG.connection;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  *
- * helper Object, to execute Queries
+ * helper class to execute Queries
  */
 public class PgJDBC {
 
@@ -16,16 +13,16 @@ public class PgJDBC {
      * use this method to execute Queries
      * (will currently print a message, when an update or insert statement is executed)
      *
-     * @param conn Connection to the database
+     * @param conn DAOConnection to the database
      * @param query A String containing the Query
      * @return returns a result set of the query's results. Can be null
      */
     public static ResultSet doQuery(Connection conn, String query){
 
         try {
-            Statement stmt = conn.createStatement();
-            ResultSet out = stmt.executeQuery(query);
-
+            PreparedStatement stmt = conn.prepareStatement(query);
+            ResultSet out = stmt.executeQuery();
+            System.out.println("<PgJDBC> DAOConnection: " + conn);
             return out;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
