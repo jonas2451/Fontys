@@ -16,7 +16,7 @@ public class PGDAOFactory extends AbstractDAOFactory {
     @Override
     public <K extends Serializable, E extends Entity1<K>> DAO<K, E> createDao(Class<? extends Serializable> s, Class<E> var, DAOConnection daoConnection) {
         PGMapper<K, E> mapper = new PGMapper(s, var, daoConnection);
-        System.out.println("\n <<<Created new PGDAO for " + var + ">>> \n");
+        System.out.println("\n<<<Created new PGDAO for " + var + ">>> \n");
         return new PGDAO<K, E>(mapper, daoConnection);
     }
 }

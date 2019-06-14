@@ -1,10 +1,7 @@
 package dao.PG;
 
-import dao.DAOException;
-import dao.DAOConnection;
+import dao.*;
 import dao.PG.connection.PgJDBC;
-import dao.DAO;
-import dao.Entity1;
 import dao.mapper.Mapper;
 
 import java.io.Serializable;
@@ -24,12 +21,12 @@ import java.util.logging.Logger;
  */
 public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<K, E> {
 
-    private Connection conn;
     private Mapper<K, E> mapper;
+    private DAOConnection connection;
 
     public PGDAO(Mapper<K, E> mapper, DAOConnection conn) {
         this.mapper = mapper;
-        this.conn = conn.getConnection();
+        this.connection = conn;
 //        Logger.getLogger(this.getClass().getName()).setLevel(Level.OFF);
     }
 
@@ -37,10 +34,10 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
     public Optional<E> get(K key) {
 
         Entity1 helperEntity = this.makeHelperObject();
+        try (Connection conn = connection.connect().getConnection()) {
+            ResultSet rs = PgJDBC.doQuery(conn, "select * from " + mapper.getTableName() + " where " + helperEntity.getNaturalId() + " = '" + key + "';");
+//        System.out.println("select * from "+ mapper.getTableName() +" where " + helperEntity.getNaturalId() + " = '" + key + "';");
 
-        ResultSet rs = PgJDBC.doQuery(conn, "select * from "+ mapper.getTableName() +" where " + helperEntity.getNaturalId() + " = '" + key + "';");
-        System.out.println("select * from "+ mapper.getTableName() +" where " + helperEntity.getNaturalId() + " = '" + key + "';");
-        try {
             rs.next();
             Object[] array = this.makeFinalArray(rs);
 
@@ -49,24 +46,23 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
                 Logger.getLogger(this.getClass().getName()).log(Level.FINE, "Successfully got: " + e);
                 return Optional.of(e);
             }
-        } catch (SQLException | NullPointerException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Request failed. No such record in the database?", ex);
         }
-
         return Optional.empty();
     }
 
     @Override
     public List<E> getAll() {
-        ResultSet rs = PgJDBC.doQuery(conn, "select * from " + mapper.getTableName() + ";");
-
         List<E> list = new ArrayList<E>();
 
-        try {
+        try (Connection conn = connection.connect().getConnection()) {
+            ResultSet rs = PgJDBC.doQuery(conn, "select * from " + mapper.getTableName() + ";");
+
             Object[] array = null;
 
             /*iterating the result set and making new Objects that are added to the list*/
-            while (rs.next()){
+            while (rs.next()) {
                 array = makeFinalArray(rs);
                 list.add(mapper.implode(array));
             }
@@ -123,13 +119,15 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
      */
     @Override
     public E save(E e) {
-        try {
+        Optional<E> optional = Optional.empty();
+
+
+        try (Connection conn = connection.connect().getConnection()) {
 
             Object[] array = this.mapper.explode(e);
 
             //put single quotes around every item
             for (int i = array.length -1; i >= 0; i--) {
-                System.out.println(Arrays.toString(array));
                 if (array[i] == null){
                     array[i] = array[i];
                 } else {
@@ -143,11 +141,12 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
                             "on conflict (" + e.getNaturalId() + ") " +
                             "do nothing;");
 
-        } catch (Exception ex){
+        optional = this.get(e.getId());
+        } catch (SQLException ex){
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Saving has failed.", ex);
         }
-        if (this.get(e.getId()).isPresent()) {
-            E newE = this.get(e.getId()).get();
+        if (optional.isPresent()) {
+            E newE = optional.get();
             Logger.getLogger(this.getClass().getName()).log(Level.FINE, "Saving successful! Saved: " + newE);
             return newE;
         } else {
@@ -180,19 +179,26 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
         } catch (IllegalAccessException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Error whilst reflecting " + e.getClass() + " fields.", ex);
         }
+
         String query = "update " + this.mapper.getTableName() + " set " +
                 builder.toString() + " where " + e.getNaturalId() + " = '" + e.getId() + "';";
 
-        if (PgJDBC.doQuery(conn, query) == null) {
+        try (Connection conn = connection.connect().getConnection()) {
+            PgJDBC.doQuery(conn, query);
+        } catch (SQLException ex) {
             return this.save(e);
         }
-
         return e;
     }
 
     @Override
     public void delete(E e) {
-        PgJDBC.doQuery(conn, "delete from " + mapper.getTableName() + " where " + e.getNaturalId() + " = '" + e.getId() + "';");
+        try (Connection conn = connection.connect().getConnection()) {
+            PgJDBC.doQuery(conn, "delete from " + mapper.getTableName() + " where " + e.getNaturalId() + " = '" + e.getId() + "';");
+        } catch (SQLException ex) {
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, "Delete has failed. ", ex);
+            throw new DAOException("Delete has failed. ", ex);
+        }
     }
 
     @Override
@@ -209,7 +215,7 @@ public class PGDAO<K extends Serializable, E extends Entity1<K>> implements DAO<
         ArrayList<E> list = new ArrayList<E>();
 
 //        System.out.println("<PGDAO getByColumnValue()> query: " + query);
-        try {
+        try(Connection conn = connection.connect().getConnection()) {
             ResultSet rs = PgJDBC.doQuery(conn, query);
 
             while (rs.next()) {

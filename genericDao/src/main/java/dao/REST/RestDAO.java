@@ -10,6 +10,8 @@ import dao.DAOException;
 import dao.Entity1;
 
 import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -38,7 +40,7 @@ public class RestDAO<K extends Serializable, E extends Entity1<K>> implements DA
     private final BiFunction<URL, String, HttpURLConnection> configurator;
 
     /**
-     * Create a DAO connection to url  for entity type and configured by a configurator.
+     * Create a DAO CONNECTION to url  for entity type and configured by a configurator.
      * @param baseUrl to connect to
      * @param type to fetch or save
      * @param aConfigurator sets headers and a like.
@@ -60,7 +62,7 @@ public class RestDAO<K extends Serializable, E extends Entity1<K>> implements DA
     }
 
     private final String USER_AGENT = "Mozilla/5.0";
-    private static final GsonBuilder gsonBuilder = new GsonBuilder().registerTypeAdapter(LocalDate .class, new LocalDateJsonAdapter() );
+    private static final GsonBuilder gsonBuilder = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateJsonAdapter() ).excludeFieldsWithModifiers(Modifier.STATIC);
 
     public static GsonBuilder gsonBuilder() {
         return gsonBuilder;
@@ -69,7 +71,7 @@ public class RestDAO<K extends Serializable, E extends Entity1<K>> implements DA
     @Override
     public Optional<E> get( K key ) {
         Gson gson = gsonBuilder.create();
-        String eLoc = baseUrl + key;
+        String eLoc = baseUrl + "/" + key;
         try {
             HttpURLConnection con = getURL( eLoc );
             return readEntity( con, gson );
@@ -148,14 +150,19 @@ public class RestDAO<K extends Serializable, E extends Entity1<K>> implements DA
     public E save( E e ) {
         E result = null;
         try {
-            Gson gson = gsonBuilder.create();
+            Gson gson = gsonBuilder()
+                    .excludeFieldsWithModifiers(Modifier.STATIC).create();
             String toJson = gson.toJson( e, type );
+            System.out.println("to be saved: " + toJson);
             int length = toJson.length();
                 System.out.println("<RestDAO save()> ToJson: " + toJson);
                 System.out.println("<RestDAO save()> ToJson.length(): " + length);
             HttpURLConnection con = postput( baseUrl, length, "POST" );
                 System.out.println("<RestDAO save()> conn: " + con);
             result = createOrUpdate( con, toJson, gson );
+            if (con.getResponseCode() == 400) {
+                System.out.println(con.getResponseMessage());
+            }
         } catch ( Exception ex ) {
             Logger.getLogger( RestDAO.class.getName() ).log( Level.SEVERE, "No result from backend", ex );
             throw new DAOException( ex.getMessage(), ex );
@@ -210,7 +217,9 @@ public class RestDAO<K extends Serializable, E extends Entity1<K>> implements DA
             HttpURLConnection con = delete( baseUrl, key );
             int responseCode = con.getResponseCode();
             System.out.println(responseCode);
-            if ( responseCode != 200 ) {
+            if ( responseCode == 400 ) {
+                System.out.println(con.getResponseMessage());
+            } else if (responseCode != 200) {
                 throw new DAOException( "delete failed for entity " + e );
             }
         } catch ( Exception ex ) {

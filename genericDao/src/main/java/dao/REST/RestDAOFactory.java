@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Using a factory allows the addition of features to the DAO or used connection
+ * Using a factory allows the addition of features to the DAO or used CONNECTION
  * without interfering with the normal API usage.
  *
  * The intended extension would be to add basic authentication headers.
@@ -40,7 +40,7 @@ public class RestDAOFactory extends AbstractDAOFactory {
      * Get a configurator for the basic headers.
      *
      * This allows to add authentication in a clean way.
-     * The configurator should be used to open the connection and add headers to it.
+     * The configurator should be used to open the CONNECTION and add headers to it.
      *
      * Simply overwrite this method in a sub class, keeping the rest the same
      * will do the trick.
@@ -61,7 +61,7 @@ public class RestDAOFactory extends AbstractDAOFactory {
             } catch ( IOException ex ) {
                 Logger.getLogger( RestDAOFactory.class.getName() ).
                         log( Level.SEVERE, null, ex );
-                throw new DAOException( "cannot open connection for url " + u.
+                throw new DAOException( "cannot open CONNECTION for url " + u.
                         toExternalForm(), ex );
             }
         };

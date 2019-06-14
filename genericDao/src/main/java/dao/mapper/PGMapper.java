@@ -93,14 +93,6 @@ public class PGMapper<K extends Serializable, E extends Entity1<K>> implements M
 //            System.out.println("\n<PGMapper implode()> types: " + Arrays.toString(types) + "\n");
             Constructor<E> constructor = this.entityType.getDeclaredConstructor(types);
 
-            Class[] eTypes = new Class[e.length];
-
-            for (int i = 0; i < e.length; i++) {
-                if (e[i] != null){
-                    eTypes[i] = e[i].getClass();
-                }
-            }
-
 //            System.out.println("<PGMapper implode() Object[e]: >" + Arrays.toString(e));
 //            System.out.println("<PGMapper implode() eTypes[e]: >" + Arrays.toString(eTypes));
 
@@ -137,7 +129,7 @@ public class PGMapper<K extends Serializable, E extends Entity1<K>> implements M
 //        System.out.println("<PGMapper filterTransientFields()> fields: " + Arrays.toString(fields));
         return fields;
     }
-
+    //<editor-fold defaultstate="collapsed" desc="wip">
     @Ignore
     private Object[] searchForNestedObjects(Object[] e, Field[] f) {
 
@@ -199,7 +191,6 @@ public class PGMapper<K extends Serializable, E extends Entity1<K>> implements M
                 objects[objects.length - 1] = e[i];
             }
         }
-
         return null;
     }
 
@@ -207,6 +198,7 @@ public class PGMapper<K extends Serializable, E extends Entity1<K>> implements M
         return e.getClass().getDeclaredFields();
     }
 
+//</editor-fold>
     /**
      * Gets the name of the relation according to the entity, in a postgres database.
      *

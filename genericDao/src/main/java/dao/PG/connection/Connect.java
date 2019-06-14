@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 /**
  *
- * creates a connection to a postgres database
+ * creates a CONNECTION to a postgres database
  */
 @Deprecated
 public class Connect {
@@ -14,8 +14,8 @@ public class Connect {
     /**
      *
      * creates a new Connection to a postgres Database
-     * @return Connection please save the returned connection into a local variable
-     * @throws SQLException when the connection fails
+     * @return Connection please save the returned CONNECTION into a local variable
+     * @throws SQLException when the CONNECTION fails
      */
     @Deprecated
     public static Connection createConnection() throws SQLException{

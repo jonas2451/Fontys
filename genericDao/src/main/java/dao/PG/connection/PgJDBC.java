@@ -18,11 +18,10 @@ public class PgJDBC {
      * @return returns a result set of the query's results. Can be null
      */
     public static ResultSet doQuery(Connection conn, String query){
-
+        System.out.println("Query: " + query);
         try {
             PreparedStatement stmt = conn.prepareStatement(query);
             ResultSet out = stmt.executeQuery();
-            System.out.println("<PgJDBC> DAOConnection: " + conn);
             return out;
         } catch (SQLException e) {
             System.out.println(e.getMessage());

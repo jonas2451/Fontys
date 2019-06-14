@@ -20,7 +20,7 @@ public abstract class AbstractDAOFactory {
      *
      * @param s the key type of the PGDAO
      * @param var1 entity class type.
-     * @param daoConnection A connection to a relational database
+     * @param daoConnection A CONNECTION to a relational database
      * @return a DAO implementation, specified by the implementing class
      */
     public <K extends Serializable, E extends Entity1<K>> DAO<K, E> createDao(Class<? extends Serializable> s, Class<E> var1, DAOConnection daoConnection){
