@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group4.heidenliquids.truck.RegisterTruckController">
+   <children>
+      <Label layoutX="173.0" layoutY="14.0" text="Register a truck">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="49.0" text="license number:" />
+      <Label layoutX="52.0" layoutY="90.0" text="type of truck:" />
+      <TextField fx:id="licenseNumber" layoutX="242.0" layoutY="44.0" prefHeight="27.0" prefWidth="194.0" />
+      <TextField fx:id="typeOfTruck" layoutX="242.0" layoutY="85.0" prefHeight="27.0" prefWidth="194.0" />
+      <RadioButton fx:id="availableButton" layoutX="242.0" layoutY="129.0" mnemonicParsing="false" text="available" />
+      <RadioButton fx:id="notAvailableButton" layoutX="337.0" layoutY="129.0" mnemonicParsing="false" text="not available" />
+      <TextField fx:id="maximumWeight" layoutX="242.0" layoutY="162.0" prefHeight="27.0" prefWidth="194.0" />
+      <TextField fx:id="maximumTowingWeight" layoutX="242.0" layoutY="202.0" prefHeight="27.0" prefWidth="194.0" />
+      <TextField fx:id="currentWeightLoaded" layoutX="242.0" layoutY="244.0" prefHeight="27.0" prefWidth="194.0" />
+      <Label layoutX="52.0" layoutY="129.0" text="status:" />
+      <Label layoutX="52.0" layoutY="167.0" text="maximum weight:" />
+      <Label layoutX="52.0" layoutY="207.0" text="maximum towing weight:" />
+      <Button fx:id="cancelButton" layoutX="120.0" layoutY="301.0" mnemonicParsing="false" onAction="#handlerCancel" text="cancel" />
+      <Button fx:id="registerTruckButton" layoutX="269.0" layoutY="301.0" mnemonicParsing="false" onAction="#handlerRegisterTruck" text="register truck" />
+      <Label fx:id="resultRed" alignment="CENTER" layoutX="82.0" layoutY="351.0" prefHeight="17.0" prefWidth="320.0" textFill="#cd0f0f" />
+      <Label fx:id="resultGreen" alignment="CENTER" layoutX="78.0" layoutY="351.0" prefHeight="17.0" prefWidth="328.0" textFill="#0bda07" />
+      <Label layoutX="52.0" layoutY="249.0" text="current weight loaded:" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="282.0" layoutY="381.0" prefHeight="27.0" prefWidth="278.0" text="List of all registered trucks">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="truckTable" layoutX="42.0" layoutY="427.0" prefHeight="200.0" prefWidth="758.0">
+        <columns>
+          <TableColumn fx:id="LicenseCol" prefWidth="129.0" text="License Number" />
+          <TableColumn fx:id="TypeCol" prefWidth="129.0" text="Truck type" />
+            <TableColumn fx:id="StatusCol" prefWidth="88.0" text="Status" />
+            <TableColumn fx:id="CurWeightCol" prefWidth="158.0" text="Current weight loaded" />
+            <TableColumn fx:id="MWeightCol" prefWidth="102.0" text="max Weight" />
+            <TableColumn fx:id="MTowCol" prefWidth="151.0" text="max towing Weight" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

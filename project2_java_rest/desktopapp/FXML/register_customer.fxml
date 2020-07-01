@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="556.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register_customer.Register_customerController">
+   <children>
+      <Label layoutX="86.0" layoutY="49.0" text="First Name" />
+      <Label layoutX="92.0" layoutY="196.0" text="Address" />
+      <Label layoutX="81.0" layoutY="161.0" text="Tax Number" />
+      <TextField fx:id="firstName" layoutX="239.0" layoutY="45.0" />
+      <TextField fx:id="customerAddress" layoutX="239.0" layoutY="192.0" />
+      <TextField fx:id="taxNumber" layoutX="239.0" layoutY="157.0" />
+      <TextField fx:id="faxNumber" layoutX="239.0" layoutY="240.0" />
+      <TextField fx:id="invoiceAddress" layoutX="239.0" layoutY="280.0" />
+      <Label layoutX="82.0" layoutY="244.0" text="Fax Number" />
+      <Label layoutX="84.0" layoutY="284.0" text="Invoice Address" />
+      <Button fx:id="register" layoutX="85.0" layoutY="347.0" mnemonicParsing="false" onAction="#registerCustomer" text="Register" />
+      <TextField fx:id="customerEmail" layoutX="242.0" layoutY="117.0" />
+      <Label layoutX="87.0" layoutY="121.0" text="Email" />
+      <Label fx:id="result" alignment="CENTER" layoutX="149.0" layoutY="351.0" prefHeight="17.0" prefWidth="335.0" textFill="#3da73e" />
+      <Label fx:id="error" alignment="CENTER" layoutX="162.0" layoutY="351.0" prefHeight="17.0" prefWidth="324.0" textFill="#ec0d0d" />
+      <Label layoutX="83.0" layoutY="21.0" text="Company Name" />
+      <Label layoutX="87.0" layoutY="86.0" text="Last Name" />
+      <TextField fx:id="lastName" layoutX="242.0" layoutY="82.0" />
+      <TextField fx:id="companyName" layoutX="239.0" layoutY="17.0" />
+   </children>
+</AnchorPane>

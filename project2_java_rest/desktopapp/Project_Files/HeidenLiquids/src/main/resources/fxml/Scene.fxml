@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.181" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group4.heidenliquids.SceneController">
+   <center>
+      <AnchorPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="700.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Customer Overview">
+                     <content>
+                        <fx:include fx:id="anchorCustomer" source="customer/blockCustomer.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Register Customer">
+                     <content>
+                        <fx:include fx:id="anchorRegisterCustomer" source="customer/registerCustomer.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Driver">
+                     <content>
+                        <fx:include fx:id="anchorDriver" source="driver/registerDriver.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Register Truck">
+                     <content>
+                        <fx:include fx:id="anchorTruck" source="truck/registerTruck.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Register Trailer">
+                     <content>
+                        <fx:include fx:id="anchorTrailer" source="trailer/registerTrailer.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Addresses">
+                     <content>
+                        <fx:include fx:id="anchorAddress" source="address/address.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Orders">
+                     <content>
+                        <fx:include fx:id="anchorOrders" source="order/orderHome.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab text="Invoices">
+                    <content>
+                      <fx:include fx:id="anchorInvoice" source="invoice/invoice.fxml" />
+                    </content>
+                  </Tab>
+                  <Tab text="Execute Order">
+                    <content>
+                      <fx:include fx:id="anchorExecuteOrder" source="executeOrder/executeOrder.fxml"/>
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

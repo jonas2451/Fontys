@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="138.0" layoutY="67.0" prefHeight="27.0" prefWidth="70.0" text="truck nr" />
+      <TextField layoutX="24.0" layoutY="67.0" prefHeight="27.0" prefWidth="114.0" text="driver" />
+      <TextField layoutX="357.0" layoutY="67.0" prefHeight="27.0" prefWidth="86.0" text="time" />
+      <TextField layoutX="208.0" layoutY="67.0" prefHeight="27.0" prefWidth="70.0" text="order nr" />
+      <TextArea layoutX="24.0" layoutY="94.0" prefHeight="200.0" prefWidth="114.0" text="Peter Roberts&#10;Robert Ling&#10;Patrick Klaas&#10;Tony Johnson&#10;John Meyer&#10;" />
+      <TextArea layoutX="357.0" layoutY="94.0" prefHeight="200.0" prefWidth="86.0" text="08:00 am&#10;10:00 am&#10;09:00 am&#10;&#10;01:00 pm" />
+      <TextArea layoutX="208.0" layoutY="94.0" prefHeight="200.0" prefWidth="70.0" text="9021&#10;9034&#10;9072&#10;&#10;9087" />
+      <TextArea layoutX="138.0" layoutY="94.0" prefHeight="200.0" prefWidth="70.0" text="1234&#10;1256&#10;1278&#10;&#10;1089" />
+      <TextArea layoutX="278.0" layoutY="94.0" prefHeight="200.0" prefWidth="79.0" text="Monday&#10;Monday&#10;Tuesday&#10;&#10;Friday" />
+      <TextField layoutX="278.0" layoutY="67.0" prefHeight="27.0" prefWidth="79.0" text="day" />
+      <TextField alignment="CENTER" layoutX="111.0" layoutY="29.0" prefHeight="27.0" prefWidth="264.0" text="Week transport schedule" />
+   </children>
+</Pane>
