@@ -1,0 +1,183 @@
+\begin{comment}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ005}\\ \hline
+        UC & \textbf{UC01} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		
+		\\ \hline
+		Rationale &  \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: ""}
+\end{table}
+\end{comment}
+
+% UC 01
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ000}\\ \hline
+        UC & \textbf{UC07} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		A user shall be able to add a profile picture via the app.
+		\\ \hline
+		Rationale & To make it use the camera. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "Facetime"}
+\end{table}
+
+\begin{flushleft}
+    \vspace{5mm}
+\begin{table}[H]
+    \begin{tabular}{ |p{2cm}||p{9cm}| }
+        \hline
+        ID & \textbf{FREQ001\tablefootnote{Functional Requirement}}\\ \hline
+        UC\tablefootnote{Associated Usecase} & \textbf{UC01, UC02} \\ \hline
+        Category & functional \\ \hline
+        Description & 
+        The account shall be uniquely identified by the users phonenumber. 
+        The number shall be captured by the phone automatically.
+        Login shall be automated.
+        \\ \hline
+        Rationale & For unique identification and to prevent multiple accounts per user. \\ \hline 
+    \end{tabular} 
+\caption{Functional Requirement: "Login with phone number"}
+\end{table}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ003}\\ \hline
+        UC & \textbf{UC05} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		A user shall be able to scan another users/places QR-code.
+		\\ \hline
+		Rationale & To keep track of the locations/persons he met. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "Scan QR-code"}
+\end{table}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ004}\\ \hline
+        UC & \textbf{UC05} \\ \hline
+		Category & functional \\ \hline
+		Description &
+        If A scans B's QR-code, both users shall be linked/marked as in close contact.
+        This means the B does not have to scan A's QR-code as well.
+		\\ \hline
+		Rationale & To minimise contact. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "Scan just once"}
+\end{table}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ005}\\ \hline
+        UC & \textbf{UC06} \\ \hline
+		Category & functional \\ \hline
+		Description &
+        A user shall be able to switch its' health status. 
+        Possible states: susceptible, ill, immune.
+		\\ \hline
+		Rationale & To be able to notify users that scanned each others barcodes. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "Switch health status"}
+\end{table}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ006}\\ \hline
+        UC & \textbf{UC04} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		A user shall be able to display its QR code. 
+		\\ \hline
+		Rationale & To make it scannable. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "Show QR-code"}
+\end{table}
+
+% % GPS related
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ007}\\ \hline
+        UC & \textbf{SHOW MEETINGS} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		A user shall be able to see all his previous meetings.
+		A meeting should be displayed on a map.
+		\\ \hline
+		Rationale & asdf \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "See previous meetings"}
+\end{table}
+
+\vspace{5mm}
+\begin{table}[H]
+	\begin{tabular}{ |p{2cm}||p{9cm}| }
+		\hline
+        ID & \textbf{FREQ008}\\ \hline
+        UC & \textbf{SHOW MEETINGS} \\ \hline
+		Category & functional \\ \hline
+		Description &
+		The user shall see the Persons name he met with in a previous meeting.
+		The name could be taken from the contacts list/phonenumber.
+		\\ \hline
+		Rationale & To keep track of you meetings. \\ \hline
+	\end{tabular}
+	\caption{Functional Requirement: "See your doomed friends names"}
+\end{table}
+
+% Tracablility Matrix
+\begin{table}[H]    
+    \begin{tabular}{|p{2.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|p{0.5cm}|} 
+        \hline & \textbf{01} & \textbf{02} & \textbf{03} & \textbf{04} & \textbf{05} & \textbf{06} & \textbf{07} & \textbf{08} \\ \hline
+        %                  1  2  3  4  5  6  7  8  
+        \textbf{FREQ001} & x& x& x& x& x& x& x& x\\ \hline
+        \textbf{FREQ002} & x& x&  &  &  &  &  &  \\ \hline
+        \textbf{FREQ003} & x& x& x& x& x& x& x& x\\ \hline
+        \textbf{FREQ004} & x& x& x& x& x& x& x& x\\ \hline
+        \textbf{FREQ005} &  &  & x& x& x& x& x& x\\ \hline
+        \textbf{FREQ006} &  &  &  &  & x&  &  & x\\ \hline
+        \textbf{FREQ007} &  &  &  &  & x&  &  & x\\ \hline
+        \textbf{FREQ008} &  &  &  & x& x&  &  &  \\ \hline
+        \textbf{FREQ009} &  &  &  &  & x& x& x& x\\ \hline
+        \textbf{FREQ010} &  &  &  &  & x&  &  & x\\ \hline
+        \textbf{FREQ011} &  &  &  & x&  &  &  & x\\ \hline
+        \textbf{FREQ012} &  &  & x&  & x&  &  & x\\ \hline
+        \textbf{FREQ013} &  &  & x&  & x&  &  & x\\ \hline
+		\textbf{FREQ014} & x& x&  & x&  &  &  & x\\ \hline
+		\textbf{FREQ015} & x& x&  & x&  &  &  & x\\ \hline
+        \textbf{FREQ016} &  &  &  &  & x& x&  & x\\ \hline
+        \textbf{FREQ017} &  &  &  &  & x&  &  & x\\ \hline
+        \textbf{FREQ018} &  &  &  &  &  &  &  &  \\ \hline
+        \textbf{FREQ019} &  &  &  &  &  &  &  &  \\ \hline
+        \textbf{FREQ020} &  &  &  &  &  &  &  &  \\ \hline
+        \textbf{FREQ021} &  &  &  &  & x&  &  & x\\ \hline
+        % \textbf{FREQ022} & x& x& x& x& x& x& x& x\\ \hline
+        
+        % \textbf{foo} &  &  &  &  &  &  &  &  \\ \hline
+    \end{tabular}
+    \caption{Tracablility Matrix for Functional Requirements}
+\end{table}
+
+\end{flushleft}

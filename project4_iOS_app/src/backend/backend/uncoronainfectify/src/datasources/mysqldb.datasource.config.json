@@ -1,0 +1,10 @@
+{
+  "name": "mysqldb",
+  "connector": "mysql",
+  "url": "mysql://oCIo2O4FtH:8dQ63wGsWU@remotemysql.com:3306/oCIo2O4FtH",
+  "host": "remotemysql.com",
+  "port": 3306,
+  "user": "oCIo2O4FtH",
+  "password": "8dQ63wGsWU",
+  "database": "oCIo2O4FtH"
+}

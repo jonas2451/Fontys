@@ -1,0 +1,112 @@
+\documentclass{report}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{pbox}
+\usepackage[section]{placeins}
+\usepackage{float}
+\usepackage{tablefootnote}
+\usepackage{svg}
+% \usepackage{flafter} 
+\usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref} 
+
+
+\title{
+  \Huge - Uncoronainfectify -
+  \\ \small (working title)
+}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{4}
+
+
+\author{
+  $$Group 9$$
+}
+\begin{document}
+  \maketitle
+  \tableofcontents
+  \newpage
+  
+  \chapter{Introduction}
+
+  \section{Purpose}
+  \input{introduction/purpose.tex}
+
+  \section{Scope}
+  \input{introduction/scope.tex}
+
+ \newpage
+  \section{Definitions, acronyms and abbreviations}
+  \input{introduction/datadictionary.tex}
+  
+  \section{References}
+  \input{introduction/references.tex}   
+
+  \section{Overview}
+  \input{introduction/overview.tex}
+
+  \newpage
+  
+\chapter{Overall description}
+    
+  \section{Product perspective}
+  \input{overall_description/perspective.tex}
+
+  % \section{Interfaces}
+  \input{overall_description/interfaces.tex}
+
+  \newpage
+  \section{Product functions}
+  \input{overall_description/functions.tex}
+
+  \newpage
+  \section{User characteristics} % Doc vs Normal Guy
+  % \input{overall_description/usercharacteristics.tex}
+  
+  \newpage
+  \section{Constraints}
+  \input{overall_description/constraints.tex}
+  
+  \newpage
+  \section{Apportioning of requirements}
+  \input{overall_description/apportioning.tex}
+
+  \newpage
+  \section{Assumptions \& Dependencies}
+  \input{overall_description/dependencies.tex}
+  \newpage
+  
+\chapter{Specific Requirements}
+
+
+
+  \section{External interface requirements}
+  \input{requirements/external_interfaces.tex}
+
+  \section{Functional Requirements}
+  
+  \input{requirements/Functional_Requirments.tex}
+
+  \newpage
+
+  \section{Non-Functional requirements}
+  \input{requirements/performance_requirements.tex}
+  
+  \section{Logical database requirements}
+  \input{requirements/database_requirements.tex}
+
+  \section{Design Constraints}
+  \input{requirements/design_constraints.tex}
+
+  % \subsection{Standards compilance}
+  % \input{requirements/standard_compilance.tex}
+
+  % \section{Software system attributes}
+  % \input{requirements/system_attributes.tex}
+%  \chapter{Appendix}
+%  	\begin{figure}[htbp]
+%  	\caption{Use Case Diagram}
+%  	\includegraphics[width=4in]{UseCaseDiagram.png}
+%  \end{figure}
+\listoftables
+\end{document}

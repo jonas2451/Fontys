@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TLI.strategy.TrafficLightTestController">
+   <children>
+      <Text layoutX="95.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DutchTrafficLight" />
+      <Text layoutX="250.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GermanTrafficLight" />
+      <Text layoutX="417.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PedestrianLight" />
+      <ImageView fitHeight="200.0" fitWidth="64.0" layoutX="108.0" layoutY="100.0">
+         <image>
+            <Image url="@../images/EmptyTrafficLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="64.0" layoutX="268.0" layoutY="100.0">
+         <image>
+            <Image url="@../images/EmptyTrafficLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="GreenDutchTL" fitHeight="40.0" fitWidth="40.0" layoutX="120.0" layoutY="200.0" visible="false">
+         <image>
+            <Image url="@../images/GreenLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="GreenGermanTL" fitHeight="40.0" fitWidth="40.0" layoutX="280.0" layoutY="200.0" visible="false">
+         <image>
+            <Image url="@../images/GreenLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="145.0" fitWidth="64.0" layoutX="431.0" layoutY="142.0">
+         <image>
+            <Image url="@../images/PedestrianLightEmpty.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="GreenPedestrianTL" fitHeight="40.0" fitWidth="40.0" layoutX="444.0" layoutY="200.0" visible="false">
+         <image>
+            <Image url="@../images/GreenLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="OrangeDutchTL" fitHeight="40.0" fitWidth="40.0" layoutX="120.0" layoutY="156.0" visible="false">
+         <image>
+            <Image url="@../images/OrangeLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="OrangeGermanTL" fitHeight="40.0" fitWidth="40.0" layoutX="280.0" layoutY="155.0" visible="false">
+         <image>
+            <Image url="@../images/OrangeLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="RedDutchTL" fitHeight="40.0" fitWidth="40.0" layoutX="120.0" layoutY="110.0" visible="false">
+         <image>
+            <Image url="@../images/RedLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="RedGermanTL" fitHeight="40.0" fitWidth="40.0" layoutX="280.0" layoutY="109.0" visible="false">
+         <image>
+            <Image url="@../images/RedLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="RedPedestrianTL" fitHeight="40.0" fitWidth="40.0" layoutX="444.0" layoutY="151.0" visible="false">
+         <image>
+            <Image url="@../images/RedLight.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

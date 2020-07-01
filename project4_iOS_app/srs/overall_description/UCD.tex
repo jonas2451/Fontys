@@ -1,0 +1,284 @@
+% Standart layout of a use case description
+
+
+
+	
+
+
+\begin{comment}
+\vspace{5mm}
+
+\begin{table}[H]
+    \begin{tabular}{ |p{2cm}||p{11cm}| }
+        \hline
+        \multicolumn{2}{|c|}{$$Login$$} \\ \hline
+        \textbf{ID} & \textbf{UC01} \\ \hline
+        Actor & test \\ \hline
+        Precondition & test \\ \hline
+        Scenario &
+        \begin{enumerate}
+            \item actor
+            \item system
+        \end{enumerate}
+        \\ \hline 
+        Exceptions & test \\ \hline
+        Extensions & test \\ \hline
+        Result & test \\ \hline
+    \end{tabular}
+    \caption{Use Case Description: "Description"}
+\end{table}
+
+
+
+\end{comment}
+\newpage
+\subsection{Use Case Descriptions}
+
+\begin{center}
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Create an account} \\ \hline
+            \textbf{ID} & \textbf{UC01} \\ \hline
+            Actor & User \\ \hline
+            Precondition & - \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to the create an account section
+                \item SYSTEM displays create an account section
+                \item ACTOR fills in desired credentials and asks SYSTEM to process the form
+                \item SYSTEM verifies the filled in credentials and outputs a validation message
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & 6. Filled in credentials are incorrect \\ \hline
+            Extensions & None \\ \hline
+            Result & ACTOR is logged into the application using their credentials \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Create an account"}
+    \end{table}
+
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Log in} \\ \hline
+            \textbf{ID} & \textbf{UC02} \\ \hline
+            Actor & User \\ \hline
+            Precondition & Actor has an account \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR inputs credentials
+                \item SYSTEM verifies credentials
+            \end{enumerate}
+            \\ \hline 
+            Exceptions &  4. SYSTEM displays message that credentials are incorrect\\ \hline
+            Extensions & None \\ \hline
+            Result & User is logged in \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Log in"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Log out} \\ \hline
+            \textbf{ID} & \textbf{UC03} \\ \hline
+            Actor & User \\ \hline
+            Precondition & Actor is logged in \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to log out section
+                \item SYSTEM displays option to log out
+                \item ACTOR chooses to log out
+                \item SYSTEM logs ACTOR out
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & User is logged out \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Log out"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Show QR code} \\ \hline
+            \textbf{ID} & \textbf{UC04} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in\\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to the Show QR code section
+                \item SYSTEM displays QR code
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & ACTOR is able to see their own QR code \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Show QR code"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Scan QR code} \\ \hline
+            \textbf{ID} & \textbf{UC05} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item \underline{Show QR code}
+                \item ACTOR navigates to scan QR code section
+                \item SYSTEM opens camera
+                \item ACTOR scans the QR code with use of the camera
+                \item SYSTEM outputs a validation message
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & QR code has been scanned \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Scan QR code"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Change health status} \\ \hline
+            \textbf{ID} & \textbf{UC06} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to Change health status section
+                \item SYSTEM displays health status options
+                \item ACTOR chooses a health status option
+                \item SYSTEM saves updated health status
+                
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & 6. SYSTEM sends notifications to other users (if health status was changed to sick) \\ \hline
+            Result & The health status of the user is updated (other users are notified) \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Change health status"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Take profile picture} \\ \hline
+            \textbf{ID} & \textbf{UC07} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to account settings section
+                \item SYSTEM displays option to take a profile picture
+                \item ACTOR takes a profile picture
+                \item SYSTEM saves profile picture
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & User has a new profile picture \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Take profile picture"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Request delivery} \\ \hline
+            \textbf{ID} & \textbf{UC08} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to the request delivery section
+                \item SYSTEM displays the request delivery section
+                \item ACTOR fills in information about the desired delivery and processes the result
+                \item SYSTEM verifies the filled in information and outputs a validation message
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & 6. Filled in information is incorrect \\ \hline
+            Extensions & None \\ \hline
+            Result & Delivery request is successfully posted \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Request delivery"}
+    \end{table}
+    
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Execute delivery} \\ \hline
+            \textbf{ID} & \textbf{UC09} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in and there must be at least one available request \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to the execute delivery section
+                \item SYSTEM displays the open delivery requests
+                \item ACTOR selects the desired delivery to execute
+                \item SYSTEM outputs a validation message
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & Delivery request is executed \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Execute delivery"}
+    \end{table}
+
+    \vspace{5mm}
+    \begin{table}[H]
+        \begin{tabular}{ |p{2cm}||p{11cm}| }
+            \hline
+            \multicolumn{2}{|c|}{$$Use Case$$ - Lookup Meeting} \\ \hline
+            \textbf{ID} & \textbf{UC10} \\ \hline
+            Actor & User \\ \hline
+            Precondition & ACTOR is logged in and had at least one previous meeting \\ \hline
+            Scenario &
+            \begin{enumerate}
+                \item ACTOR initiates the application
+                \item SYSTEM directs to the launch space
+                \item ACTOR navigates to the lookup meetings section
+                \item SYSTEM displays the lookup meeting section
+                \item ACTOR selects a meeting he wants to lookup
+                \item SYSTEM shows the meetings date and location on a map
+            \end{enumerate}
+            \\ \hline 
+            Exceptions & None \\ \hline
+            Extensions & None \\ \hline
+            Result & A Previous meeting is displayed \\ \hline
+        \end{tabular}
+        \caption{Use Case Description: "Lookup Meeting"}
+    \end{table}
+    
+    \end{center}

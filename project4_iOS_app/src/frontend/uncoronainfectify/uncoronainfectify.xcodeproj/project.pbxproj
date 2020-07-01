@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0044F7DB247D2E5B007C7766 /* MeetingDAOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044F7DA247D2E5B007C7766 /* MeetingDAOTest.swift */; };
+		00AB6EAD2441FBE3002F2B16 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AB6EAC2441FBE3002F2B16 /* LocationManager.swift */; };
+		609D90ABE382527B9EF2903F /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D9599DF17C70C3B15BD28 /* loginView.swift */; };
+		609D93C7BC82640AC39DA226 /* startupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D9FFE6139D02B71032A53 /* startupView.swift */; };
+		609D9CF0206B40AE3FAA9997 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D908D99E1B079654A42AD /* Person.swift */; };
+		609D9D680F18E07D60E014D3 /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D9A68DA639D32624FF3C8 /* PersonDAO.swift */; };
+		609D9E7115CC812C91478C68 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D9D536D7F7008ED617E8A /* DAO.swift */; };
+		A68548B624509C9800D5C963 /* ViewHealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68548B524509C9800D5C963 /* ViewHealthStatus.swift */; };
+		B66AD3FDFBE22D9C519FB917 /* MeetingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66ADF118D2C8E780FF4E287 /* MeetingHelper.swift */; };
+		B66AD7B30CF4C4D19AD5A3DC /* ViewTestMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66ADA434D589B2F5F7011CE /* ViewTestMethods.swift */; };
+		B66ADB814658B3290A80B875 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AD30B77DAD3B1403D100C /* MapView.swift */; };
+		B66ADDA6CB22FCD9B864E101 /* MeetingListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AD3EC5634FB5D82F407A2 /* MeetingListElement.swift */; };
+		DDA31BB4243DCAD500BD8FA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA31BB3243DCAD500BD8FA1 /* AppDelegate.swift */; };
+		DDA31BB6243DCAD500BD8FA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA31BB5243DCAD500BD8FA1 /* SceneDelegate.swift */; };
+		DDA31BB8243DCAD500BD8FA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA31BB7243DCAD500BD8FA1 /* ContentView.swift */; };
+		DDA31BBA243DCAD900BD8FA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA31BB9243DCAD900BD8FA1 /* Assets.xcassets */; };
+		DDA31BBD243DCAD900BD8FA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA31BBC243DCAD900BD8FA1 /* Preview Assets.xcassets */; };
+		DDA31BC0243DCAD900BD8FA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA31BBE243DCAD900BD8FA1 /* LaunchScreen.storyboard */; };
+		DDA31BD6243DD39B00BD8FA1 /* ViewScanQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA31BD5243DD39B00BD8FA1 /* ViewScanQR.swift */; };
+		DDA31BD9243DD46000BD8FA1 /* ViewShowQR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA31BD8243DD46000BD8FA1 /* ViewShowQR.swift */; };
+		DDAF9D7624487278005893B6 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF9D7524487278005893B6 /* AppView.swift */; };
+		DDC8537A247D2E5C00E6EBFB /* PersonDAOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC85379247D2E5C00E6EBFB /* PersonDAOTest.swift */; };
+		ED189B892445F29300961197 /* GPSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED189B882445F29300961197 /* GPSView.swift */; };
+		ED1ED5B1247FEF6E00F07DE4 /* SingleMeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1ED5B0247FEF6E00F07DE4 /* SingleMeetingView.swift */; };
+		ED1ED5B5247FFD4E00F07DE4 /* MeetingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1ED5B4247FFD4E00F07DE4 /* MeetingRow.swift */; };
+		ED78173F246D50370018BD13 /* LocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF53321246AC6E800DC5DBD /* LocationDAO.swift */; };
+		ED781741246D56A60018BD13 /* MeetingDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED781740246D56A60018BD13 /* MeetingDAO.swift */; };
+		EDCC01232480008C00D1E4A2 /* MeetingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC01222480008C00D1E4A2 /* MeetingList.swift */; };
+		FC00ED402480317400A551E3 /* ScanHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC00ED3F2480317400A551E3 /* ScanHelperTest.swift */; };
+		FC8A01BE247FB4F500B56FEB /* ScanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8A01BD247FB4F500B56FEB /* ScanHelper.swift */; };
+		FC919511246EBEE0003E6857 /* LocationDAOTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC919510246EBEE0003E6857 /* LocationDAOTest.swift */; };
+		FCCB59D02450EE430039E070 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCB59CF2450EE430039E070 /* Coordinator.swift */; };
+		FCF53324246ACB1B00DC5DBD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF53323246ACB1B00DC5DBD /* Model.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDA31BC7243DCAD900BD8FA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDA31BA8243DCAD500BD8FA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA31BAF243DCAD500BD8FA1;
+			remoteInfo = uncoronainfectify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0044F7DA247D2E5B007C7766 /* MeetingDAOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingDAOTest.swift; sourceTree = "<group>"; };
+		00AB6EAC2441FBE3002F2B16 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		609D908D99E1B079654A42AD /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		609D9599DF17C70C3B15BD28 /* loginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
+		609D9A68DA639D32624FF3C8 /* PersonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
+		609D9D536D7F7008ED617E8A /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		609D9FFE6139D02B71032A53 /* startupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startupView.swift; sourceTree = "<group>"; };
+		A63AD715247EBE76001126E8 /* G9UncoronaInfectify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = G9UncoronaInfectify.entitlements; sourceTree = "<group>"; };
+		A68548B524509C9800D5C963 /* ViewHealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHealthStatus.swift; sourceTree = "<group>"; };
+		B66AD30B77DAD3B1403D100C /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B66AD3EC5634FB5D82F407A2 /* MeetingListElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingListElement.swift; sourceTree = "<group>"; };
+		B66ADA434D589B2F5F7011CE /* ViewTestMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewTestMethods.swift; sourceTree = "<group>"; };
+		B66ADF118D2C8E780FF4E287 /* MeetingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingHelper.swift; sourceTree = "<group>"; };
+		DDA31BB0243DCAD500BD8FA1 /* G9UncoronaInfectify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G9UncoronaInfectify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA31BB3243DCAD500BD8FA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDA31BB5243DCAD500BD8FA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DDA31BB7243DCAD500BD8FA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DDA31BB9243DCAD900BD8FA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDA31BBC243DCAD900BD8FA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDA31BBF243DCAD900BD8FA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDA31BC1243DCAD900BD8FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA31BC6243DCAD900BD8FA1 /* uncoronainfectifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uncoronainfectifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA31BCC243DCAD900BD8FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA31BD5243DD39B00BD8FA1 /* ViewScanQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewScanQR.swift; sourceTree = "<group>"; };
+		DDA31BD8243DD46000BD8FA1 /* ViewShowQR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShowQR.swift; sourceTree = "<group>"; };
+		DDAF9D7524487278005893B6 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		DDC85379247D2E5C00E6EBFB /* PersonDAOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDAOTest.swift; sourceTree = "<group>"; };
+		ED189B882445F29300961197 /* GPSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSView.swift; sourceTree = "<group>"; };
+		ED1ED5B0247FEF6E00F07DE4 /* SingleMeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleMeetingView.swift; sourceTree = "<group>"; };
+		ED1ED5B4247FFD4E00F07DE4 /* MeetingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingRow.swift; sourceTree = "<group>"; };
+		ED781740246D56A60018BD13 /* MeetingDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingDAO.swift; sourceTree = "<group>"; };
+		EDCC01222480008C00D1E4A2 /* MeetingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingList.swift; sourceTree = "<group>"; };
+		FC00ED3F2480317400A551E3 /* ScanHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHelperTest.swift; sourceTree = "<group>"; };
+		FC8A01BD247FB4F500B56FEB /* ScanHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanHelper.swift; sourceTree = "<group>"; };
+		FC919510246EBEE0003E6857 /* LocationDAOTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationDAOTest.swift; path = DAOTests/LocationDAOTest.swift; sourceTree = "<group>"; };
+		FCCB59CF2450EE430039E070 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		FCF53321246AC6E800DC5DBD /* LocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDAO.swift; sourceTree = "<group>"; };
+		FCF53323246ACB1B00DC5DBD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDA31BAD243DCAD500BD8FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA31BC3243DCAD900BD8FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		609D94E3C9F22C80810C068C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				609D908D99E1B079654A42AD /* Person.swift */,
+				609D9599DF17C70C3B15BD28 /* loginView.swift */,
+				609D9FFE6139D02B71032A53 /* startupView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		609D9981CBE7AF4D30C14E2A /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				609D9D536D7F7008ED617E8A /* DAO.swift */,
+				FCF53321246AC6E800DC5DBD /* LocationDAO.swift */,
+				FCF53323246ACB1B00DC5DBD /* Model.swift */,
+				609D9A68DA639D32624FF3C8 /* PersonDAO.swift */,
+				ED781740246D56A60018BD13 /* MeetingDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		DDA31BA7243DCAD500BD8FA1 = {
+			isa = PBXGroup;
+			children = (
+				DDA31BB2243DCAD500BD8FA1 /* uncoronainfectify */,
+				DDA31BC9243DCAD900BD8FA1 /* uncoronainfectifyTests */,
+				DDA31BB1243DCAD500BD8FA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDA31BB1243DCAD500BD8FA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDA31BB0243DCAD500BD8FA1 /* G9UncoronaInfectify.app */,
+				DDA31BC6243DCAD900BD8FA1 /* uncoronainfectifyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDA31BB2243DCAD500BD8FA1 /* uncoronainfectify */ = {
+			isa = PBXGroup;
+			children = (
+				A63AD715247EBE76001126E8 /* G9UncoronaInfectify.entitlements */,
+				DDAF9D7524487278005893B6 /* AppView.swift */,
+				DDF7A2F62449A90F00D2FD37 /* ScanQR */,
+				DDF7A2F52449A90200D2FD37 /* ShowQR */,
+				DDF7A2F42449A8D700D2FD37 /* LocationServices */,
+				DDA31BB3243DCAD500BD8FA1 /* AppDelegate.swift */,
+				DDA31BB5243DCAD500BD8FA1 /* SceneDelegate.swift */,
+				DDA31BB7243DCAD500BD8FA1 /* ContentView.swift */,
+				DDA31BB9243DCAD900BD8FA1 /* Assets.xcassets */,
+				DDA31BBE243DCAD900BD8FA1 /* LaunchScreen.storyboard */,
+				DDA31BC1243DCAD900BD8FA1 /* Info.plist */,
+				609D9981CBE7AF4D30C14E2A /* DAO */,
+				A68548B524509C9800D5C963 /* ViewHealthStatus.swift */,
+				DDA31BBB243DCAD900BD8FA1 /* Preview Content */,
+				609D94E3C9F22C80810C068C /* Login */,
+			);
+			path = uncoronainfectify;
+			sourceTree = "<group>";
+		};
+		DDA31BBB243DCAD900BD8FA1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DDA31BBC243DCAD900BD8FA1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DDA31BC9243DCAD900BD8FA1 /* uncoronainfectifyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FC919510246EBEE0003E6857 /* LocationDAOTest.swift */,
+				DDA31BCC243DCAD900BD8FA1 /* Info.plist */,
+				0044F7DA247D2E5B007C7766 /* MeetingDAOTest.swift */,
+				DDC85379247D2E5C00E6EBFB /* PersonDAOTest.swift */,
+				FC00ED3F2480317400A551E3 /* ScanHelperTest.swift */,
+			);
+			path = uncoronainfectifyTests;
+			sourceTree = "<group>";
+		};
+		DDF7A2F42449A8D700D2FD37 /* LocationServices */ = {
+			isa = PBXGroup;
+			children = (
+				00AB6EAC2441FBE3002F2B16 /* LocationManager.swift */,
+				ED189B882445F29300961197 /* GPSView.swift */,
+				B66ADA434D589B2F5F7011CE /* ViewTestMethods.swift */,
+				ED1ED5B0247FEF6E00F07DE4 /* SingleMeetingView.swift */,
+				ED1ED5B4247FFD4E00F07DE4 /* MeetingRow.swift */,
+				B66AD3EC5634FB5D82F407A2 /* MeetingListElement.swift */,
+				EDCC01222480008C00D1E4A2 /* MeetingList.swift */,
+				B66ADF118D2C8E780FF4E287 /* MeetingHelper.swift */,
+				B66AD30B77DAD3B1403D100C /* MapView.swift */,
+			);
+			path = LocationServices;
+			sourceTree = "<group>";
+		};
+		DDF7A2F52449A90200D2FD37 /* ShowQR */ = {
+			isa = PBXGroup;
+			children = (
+				DDA31BD8243DD46000BD8FA1 /* ViewShowQR.swift */,
+			);
+			path = ShowQR;
+			sourceTree = "<group>";
+		};
+		DDF7A2F62449A90F00D2FD37 /* ScanQR */ = {
+			isa = PBXGroup;
+			children = (
+				DDA31BD5243DD39B00BD8FA1 /* ViewScanQR.swift */,
+				FCCB59CF2450EE430039E070 /* Coordinator.swift */,
+				FC8A01BD247FB4F500B56FEB /* ScanHelper.swift */,
+			);
+			path = ScanQR;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDA31BAF243DCAD500BD8FA1 /* uncoronainfectify */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA31BCF243DCAD900BD8FA1 /* Build configuration list for PBXNativeTarget "uncoronainfectify" */;
+			buildPhases = (
+				DDA31BAC243DCAD500BD8FA1 /* Sources */,
+				DDA31BAD243DCAD500BD8FA1 /* Frameworks */,
+				DDA31BAE243DCAD500BD8FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uncoronainfectify;
+			productName = uncoronainfectify;
+			productReference = DDA31BB0243DCAD500BD8FA1 /* G9UncoronaInfectify.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDA31BC5243DCAD900BD8FA1 /* uncoronainfectifyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDA31BD2243DCAD900BD8FA1 /* Build configuration list for PBXNativeTarget "uncoronainfectifyTests" */;
+			buildPhases = (
+				DDA31BC2243DCAD900BD8FA1 /* Sources */,
+				DDA31BC3243DCAD900BD8FA1 /* Frameworks */,
+				DDA31BC4243DCAD900BD8FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDA31BC8243DCAD900BD8FA1 /* PBXTargetDependency */,
+			);
+			name = uncoronainfectifyTests;
+			productName = uncoronainfectifyTests;
+			productReference = DDA31BC6243DCAD900BD8FA1 /* uncoronainfectifyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDA31BA8243DCAD500BD8FA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = group9;
+				TargetAttributes = {
+					DDA31BAF243DCAD500BD8FA1 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					DDA31BC5243DCAD900BD8FA1 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = DDA31BAF243DCAD500BD8FA1;
+					};
+				};
+			};
+			buildConfigurationList = DDA31BAB243DCAD500BD8FA1 /* Build configuration list for PBXProject "uncoronainfectify" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDA31BA7243DCAD500BD8FA1;
+			productRefGroup = DDA31BB1243DCAD500BD8FA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDA31BAF243DCAD500BD8FA1 /* uncoronainfectify */,
+				DDA31BC5243DCAD900BD8FA1 /* uncoronainfectifyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDA31BAE243DCAD500BD8FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDA31BC0243DCAD900BD8FA1 /* LaunchScreen.storyboard in Resources */,
+				DDA31BBD243DCAD900BD8FA1 /* Preview Assets.xcassets in Resources */,
+				DDA31BBA243DCAD900BD8FA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA31BC4243DCAD900BD8FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDA31BAC243DCAD500BD8FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED78173F246D50370018BD13 /* LocationDAO.swift in Sources */,
+				DDA31BB4243DCAD500BD8FA1 /* AppDelegate.swift in Sources */,
+				ED189B892445F29300961197 /* GPSView.swift in Sources */,
+				FCCB59D02450EE430039E070 /* Coordinator.swift in Sources */,
+				DDAF9D7624487278005893B6 /* AppView.swift in Sources */,
+				DDA31BB6243DCAD500BD8FA1 /* SceneDelegate.swift in Sources */,
+				FCF53324246ACB1B00DC5DBD /* Model.swift in Sources */,
+				DDA31BD6243DD39B00BD8FA1 /* ViewScanQR.swift in Sources */,
+				ED781741246D56A60018BD13 /* MeetingDAO.swift in Sources */,
+				A68548B624509C9800D5C963 /* ViewHealthStatus.swift in Sources */,
+				ED1ED5B5247FFD4E00F07DE4 /* MeetingRow.swift in Sources */,
+				00AB6EAD2441FBE3002F2B16 /* LocationManager.swift in Sources */,
+				ED1ED5B1247FEF6E00F07DE4 /* SingleMeetingView.swift in Sources */,
+				DDA31BD9243DD46000BD8FA1 /* ViewShowQR.swift in Sources */,
+				DDA31BB8243DCAD500BD8FA1 /* ContentView.swift in Sources */,
+				FC8A01BE247FB4F500B56FEB /* ScanHelper.swift in Sources */,
+				609D9E7115CC812C91478C68 /* DAO.swift in Sources */,
+				609D9CF0206B40AE3FAA9997 /* Person.swift in Sources */,
+				609D90ABE382527B9EF2903F /* loginView.swift in Sources */,
+				609D93C7BC82640AC39DA226 /* startupView.swift in Sources */,
+				609D9D680F18E07D60E014D3 /* PersonDAO.swift in Sources */,
+				B66AD7B30CF4C4D19AD5A3DC /* ViewTestMethods.swift in Sources */,
+				EDCC01232480008C00D1E4A2 /* MeetingList.swift in Sources */,
+				B66ADDA6CB22FCD9B864E101 /* MeetingListElement.swift in Sources */,
+				B66AD3FDFBE22D9C519FB917 /* MeetingHelper.swift in Sources */,
+				B66ADB814658B3290A80B875 /* MapView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDA31BC2243DCAD900BD8FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC00ED402480317400A551E3 /* ScanHelperTest.swift in Sources */,
+				DDC8537A247D2E5C00E6EBFB /* PersonDAOTest.swift in Sources */,
+				FC919511246EBEE0003E6857 /* LocationDAOTest.swift in Sources */,
+				0044F7DB247D2E5B007C7766 /* MeetingDAOTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDA31BC8243DCAD900BD8FA1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDA31BAF243DCAD500BD8FA1 /* uncoronainfectify */;
+			targetProxy = DDA31BC7243DCAD900BD8FA1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDA31BBE243DCAD900BD8FA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDA31BBF243DCAD900BD8FA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDA31BCD243DCAD900BD8FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDA31BCE243DCAD900BD8FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDA31BD0243DCAD900BD8FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uncoronainfectify/G9UncoronaInfectify.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"uncoronainfectify/Preview Content\"";
+				DEVELOPMENT_TEAM = KH7BD93PMV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = uncoronainfectify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.fontys.apps20.G9UncoronaInfectify;
+				PRODUCT_NAME = UncoronaInfectify;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDA31BD1243DCAD900BD8FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uncoronainfectify/G9UncoronaInfectify.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"uncoronainfectify/Preview Content\"";
+				DEVELOPMENT_TEAM = KH7BD93PMV;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = uncoronainfectify/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nl.fontys.apps20.G9UncoronaInfectify;
+				PRODUCT_NAME = UncoronaInfectify;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDA31BD3243DCAD900BD8FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KH7BD93PMV;
+				INFOPLIST_FILE = uncoronainfectifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fontys.nl.uncoronainfectifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/G9UncoronaInfectify.app/G9UncoronaInfectify";
+			};
+			name = Debug;
+		};
+		DDA31BD4243DCAD900BD8FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KH7BD93PMV;
+				INFOPLIST_FILE = uncoronainfectifyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fontys.nl.uncoronainfectifyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/G9UncoronaInfectify.app/G9UncoronaInfectify";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDA31BAB243DCAD500BD8FA1 /* Build configuration list for PBXProject "uncoronainfectify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA31BCD243DCAD900BD8FA1 /* Debug */,
+				DDA31BCE243DCAD900BD8FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA31BCF243DCAD900BD8FA1 /* Build configuration list for PBXNativeTarget "uncoronainfectify" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA31BD0243DCAD900BD8FA1 /* Debug */,
+				DDA31BD1243DCAD900BD8FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDA31BD2243DCAD900BD8FA1 /* Build configuration list for PBXNativeTarget "uncoronainfectifyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDA31BD3243DCAD900BD8FA1 /* Debug */,
+				DDA31BD4243DCAD900BD8FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDA31BA8243DCAD500BD8FA1 /* Project object */;
+}

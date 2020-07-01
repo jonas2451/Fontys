@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="134.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TLI.GUI.FX.PedestrianLightController">
+   <children>
+      <Circle layoutX="67.0" layoutY="69.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle layoutX="67.0" layoutY="196.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="red" fill="#3b3b3b" layoutX="67.0" layoutY="76.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="green" fill="#3b3b3b" layoutX="67.0" layoutY="204.0" radius="55.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</Pane>
